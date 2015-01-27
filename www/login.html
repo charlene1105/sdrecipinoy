@@ -1,0 +1,35 @@
+<div ng-controller="loginCtrlr">
+<ons-navigator var="nav">
+ <ons-page modifier="full_bg">
+   
+      
+      <ons-toolbar class="navigation-bar">
+              <div class="left">
+                <ons-toolbar-button 
+                  ng-click="menu.toggleMenu()">
+                  <ons-icon icon="ion-navicon" class="menu-icon"></ons-icon>
+                </ons-toolbar-button>
+                <span class="toolbar-title">Sign In</span>
+              </div> <!-- Nav Icon -->
+      </ons-toolbar>
+    
+
+    <div class="login-form">
+      <h4 style="color: #57594D">Login your Recipinoy Account</h4>
+      <input type="text" class="text-input" placeholder="Username" value="" ng-model="username">
+      
+      <input type="password" class="text-input" placeholder="Password" value="" ng-model="password" style="margin-top: 3px">
+     
+      <ons-button modifier="quiet" class="forgot-password" ng-show="accessDenied" style="background-color: transparent;color:red">Invalid Username or Password</ons-button>
+      <br ng-hide="accessDenied">
+      <ons-button modifier="large" class="login-button" ng-click="login(username,password);">Log In</ons-button>
+      
+      <br><br>
+      
+    </div>
+
+</ons-page>
+
+</ons-navigator>
+
+</div>

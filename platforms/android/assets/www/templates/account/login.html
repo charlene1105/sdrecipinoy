@@ -1,0 +1,23 @@
+<ons-navigator var="nav">
+  <ons-page>      
+      <ons-toolbar class="navigation-bar">
+              <div class="left">
+                <ons-toolbar-button 
+                  ng-click="menu.toggleMenu()">
+                  <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
+                </ons-toolbar-button>
+              </div> <!-- Nav Icon -->
+      </ons-toolbar>
+    
+
+    <div class="login-form" ng-controller="loginCtrlr">
+      <input type="text" class="text-input--underbar" placeholder="Email" value="" ng-model="username">
+      <input type="password" class="text-input--underbar" placeholder="Password" value="" ng-model="password">
+      <br><br>
+      <ons-button modifier="large" class="login-button" ng-click="login(username,password)">Log In</ons-button>
+      <br><br>
+      <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
+    </div><!-- Login form -->
+  
+  </ons-page>
+</ons-navigator>

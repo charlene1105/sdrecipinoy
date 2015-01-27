@@ -1,0 +1,62 @@
+
+
+<ons-page>
+<ons-tabbar>
+        <ons-tab page="PAGE.html">
+          <ons-icon icon="ion-home"></ons-icon>
+          <span style="font-size: 14px">Home</span>
+        </ons-tab>
+        <ons-tab page="myrecipes.html">
+          <ons-icon icon="ion-star"></ons-icon>
+          <span style="font-size: 14px">Recipes</span>
+        </ons-tab>
+        <ons-tab page="mysettings.html">
+          <ons-icon icon="ion-gear-a"></ons-icon>
+          <span style="font-size: 14px">Settings</span>
+        </ons-tab>
+</ons-tabbar>
+
+      <ons-toolbar>
+         <div class="left">
+                <ons-toolbar-button 
+                  ng-click="menu.toggleMenu()">
+                  <ons-icon icon="ion-navicon" class="menu-icon"></ons-icon>
+                </ons-toolbar-button>
+                <span class="toolbar-title">Search</span>
+                
+          </div> <!-- Nav Icon -->
+      </ons-toolbar>
+  
+
+      <ons-list-header style="background-color: #00A629;color: white;">Search Results</ons-list-header>
+      <ons-list>
+        <ons-list-item modifier="chevron" class="list-item-container" ng-click="nav.pushPage('page.html')" ng-repeat="recipe in recipes">
+          <ons-row>
+              <ons-col width="95px">
+                <img src="{{ recipe.img }}" class="thumbnail">
+              </ons-col>
+              <ons-col>
+                <div class="name">
+                  {{ recipe.rcpname }}
+                </div>
+                <div class="location">
+                  <i class="fa fa-map-marker" style="color: red"></i>
+                    {{ recipe.location }}
+                  
+                </div>
+                <div class="desc">
+                  {{ recipe.rcpdesc }}
+                </div>
+              </ons-col>
+            <ons-col width="40px">
+           
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+      
+ <!--      <div ng-hide="isResults" fixed-style>
+        <h4>No Recipes Found</h4>
+      </div> -->
+</ons-page>
+

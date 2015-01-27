@@ -1,0 +1,55 @@
+<ons-page style="background-color: #272727;"> 
+<div class="center">
+
+</div>
+<ons-list style="background-color: #272727;">
+    <ons-list-header style="background-color: #06AA85;color: white;font-weight: bold; text-align: center">Recipes</ons-list-header>
+
+      <span onclick="menu.setMainPage('search.html', {closeMenu: true})" class="menu-item"> 
+        <ons-icon icon="fa-search"></ons-icon>
+        Search
+      </span>
+
+      <span onclick="menu.setMainPage('profile.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="fa-tasks"></ons-icon>
+        Categories
+      </span>
+
+      <span onclick="menu.setMainPage('page2.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="fa-map-marker"></ons-icon>
+        Location
+      </span>
+
+    <ons-list-header style="background-color: #06AA85;color: white;font-weight: bold; text-align: center">User Account</ons-list-header>
+
+      <span onclick="menu.setMainPage('login.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="fa-sign-in"></ons-icon>
+        Login
+      </span>
+
+      <div ng-show="loggedIn">
+        <span onclick="menu.setMainPage('login.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="ion-log-in"></ons-icon>
+        Login
+      </span>
+      </div>
+
+      <span onclick="menu.setMainPage('register.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="fa-user"></ons-icon>
+        Sign Up
+      </span>
+
+    <ons-list-header style="background-color: #06AA85;color: white;font-weight: bold; text-align: center">Recipinoy</ons-list-header>
+
+      <span onclick="menu.setMainPage('about.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="fa-info"></ons-icon>
+        About
+      </span>
+
+       <span onclick="menu.setMainPage('about.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="ion-android-mail"></ons-icon>
+        Contact Us
+      </span>
+
+</ons-list>
+</ons-page>

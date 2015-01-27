@@ -1,0 +1,47 @@
+[
+    {
+      "id": "1",
+      "name": "Breakfast"
+    },
+    {
+      "id": "2",
+      "name": "Merienda"
+    },
+    {
+      "id": "3",
+      "name": "Pulutan"
+    },
+    {
+      "id": "4",
+      "name": "Breads and Pastries"
+    },
+    {
+      "id": "5",
+      "name": "Fiesta Food"
+    },
+    {
+      "id": "6",
+      "name": "Main dishes"
+    },
+    {
+      "id": "7",
+      "name": "Side dishes"
+    },
+    {
+      "id": "8",
+      "name": "Street Foods"
+    },
+    {
+      "id": "9",
+      "name": "Exotic Dishes"
+    },
+    {
+      "id": "10",
+      "name": "Beverages"
+    },
+    {
+      "id": "11",
+      "name": "Desserts"
+    }
+    
+  ]
