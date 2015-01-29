@@ -6,7 +6,6 @@
   <meta name="mobile-web-app-capable" content="yes">
 
   <title>Recipinoy</title>  
-  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
 
@@ -15,10 +14,8 @@
 
 
   <script src="lib/onsen/js/angular/angular.js"></script>    
-  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>   
   
-  <script src="cordova.js"></script>  
-   
   <script src="js/recipinoy.js"></script>
   <script>
     ons.ready(function() {
@@ -81,7 +78,7 @@
                 <ons-icon icon="ion-location" size="30px" fixed-width="false" style="color: red; margin-top: 5px"></ons-icon>
               </ons-col>
             <ons-col size="40%">
-                    <select class="text-input" ng-model="location" ng-options="province.name for province in provinces">
+                    <select class="text-input" ng-model="location" ng-options="province.name for province in provinces track by province.name">
                     </select>
             </ons-col>
 
@@ -89,7 +86,7 @@
                 <ons-icon icon="fa-tasks" size="20px" fixed-width="false" style="color: red; margin-top: 5px"></ons-icon>
               </ons-col>
             <ons-col size="40%">
-                    <select class="text-input" ng-model="category" ng-options="category.name for category in categories">
+                    <select class="text-input" ng-model="category" ng-options="category.name for category in categories track by category.name">
                     </select>
             </ons-col>
          </ons-row>

@@ -1,0 +1,28 @@
+<ons-page>
+<ons-tabbar>
+        <ons-tab page="templates/recipe/information.html" active="true">
+          <ons-icon icon="ion-android-information"></ons-icon>
+          <span style="font-size: 14px">Information</span>
+        </ons-tab>
+        <ons-tab page="templates/recipe/procedures.html">
+          <ons-icon icon="ion-android-note"></ons-icon>
+          <span style="font-size: 14px">Procedures</span>
+        </ons-tab>
+        <ons-tab page="templates/recipe/ingredients.html">
+          <ons-icon icon="ion-spoon"></ons-icon>
+          <ons-icon icon="ion-fork"></ons-icon>
+          <span style="font-size: 14px">Ingredients</span>
+        </ons-tab>
+</ons-tabbar>
+
+<ons-toolbar>
+  <div class="left">
+    <ons-toolbar-button>
+      <ons-back-button></ons-back-button>
+    </ons-toolbar-button>
+    <span class="toolbar-title">{{ recipe[0].rcpname }}</span>
+  </div>
+</ons-toolbar>
+
+
+</ons-page>

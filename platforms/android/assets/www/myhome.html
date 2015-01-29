@@ -1,18 +1,31 @@
 
+
 <ons-page>
-      <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Profile</div>
-        <div class="right">
-          <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
-        </div>
-      </ons-toolbar>
+<ons-tabbar>
+        <ons-tab page="PAGE.html">
+          <ons-icon icon="ion-home"></ons-icon>
+          <span style="font-size: 14px">Home</span>
+        </ons-tab>
+        <ons-tab page="myrecipes.html">
+          <ons-icon icon="ion-star"></ons-icon>
+          <span style="font-size: 14px">Recipes</span>
+        </ons-tab>
+        <ons-tab page="mysettings.html">
+          <ons-icon icon="ion-gear-a"></ons-icon>
+          <span style="font-size: 14px">Settings</span>
+        </ons-tab>
+</ons-tabbar>
+
+<ons-toolbar>
+  <div class="left"><ons-back-button>Back</ons-back-button></div>
+  <div class="center">Profile</div>
+  <div class="right">
+    <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+  </div>
+</ons-toolbar>
 
       <div class="profile-card">
-
-        <img src="images/profile-image-01.png" class="profile-image">
-        
-        
+        <img src="images/profile-image-01.png" class="profile-image">        
             <div class="profile-name">{{ user[0].fname + " " + user[0].lname }}</div>
             <div class="profile-id">{{ user[0].username }}</div>
             <div class="profile-desc">Profile Description</div>

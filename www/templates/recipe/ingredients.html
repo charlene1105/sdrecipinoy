@@ -1,4 +1,9 @@
 <ons-page>
 <h1>Ingredients List</h1>
-<h4></h4>
+{{ recipe[0].rcpname }}
+<div ng-repeat="ingredient in ingredients">
+	
+	{{ ingredient.ingrdntname }}
+	
+</div>
 </ons-page>

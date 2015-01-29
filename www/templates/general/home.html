@@ -1,0 +1,73 @@
+<ons-navigator var="nav">
+
+      <ons-page modifier="full_bg">
+  
+        <div class="search-form">
+          <ons-toolbar class="navigation-bar">
+            <div class="left">
+              <ons-toolbar-button 
+                ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" class="menu-icon"></ons-icon>
+              </ons-toolbar-button>
+              
+            </div> <!-- Nav Icon -->
+          </ons-toolbar>
+
+        <img src="img/logo.png" alt="">
+
+
+
+         <!-- RECIPE INPUT BOX -->
+        <ons-row class="search-box">
+            <ons-col size="10%">
+              <ons-icon icon="ion-spoon" size="30px" fixed-width="false" style="color: red"></ons-icon>
+              <ons-icon icon="ion-fork" size="30px" fixed-width="false" style="color: red"></ons-icon>
+            </ons-col>
+            <ons-col size="90%">
+              <input type="text" class="text-input" placeholder="Recipe Name, Ingredients" ng-model="name">
+            </ons-col>
+         </ons-row>
+        
+
+      <!-- PLACE/CATEGORY INPUT BOX -->
+        <ons-row class="search-box">
+            <ons-col size="10%">
+                <ons-icon icon="ion-location" size="30px" fixed-width="false" style="color: red; margin-top: 5px"></ons-icon>
+              </ons-col>
+            <ons-col size="40%">
+                    <select class="text-input" ng-model="location" ng-options="province.name for province in provinces track by province.name">
+                    </select>
+            </ons-col>
+
+            <ons-col size="10%">
+                <ons-icon icon="fa-tasks" size="20px" fixed-width="false" style="color: red; margin-top: 5px"></ons-icon>
+              </ons-col>
+            <ons-col size="40%">
+                    <select class="text-input" ng-model="category" ng-options="category.name for category in categories track by category.name">
+                    </select>
+            </ons-col>
+         </ons-row>
+  
+
+        <!-- SEARCH BUTTON -->
+         <ons-row>
+            <ons-col size="10%">
+            </ons-col>
+            <ons-col size="90%">
+           
+
+              <button class="button large" ng-click="search(name,location.name,category.name);nav.pushPage('results.html');" id="searchBtn">
+              <ons-icon icon="ion-android-search"></ons-icon>
+                Search Recipe
+              </button>
+
+        <span style="font-size: 0.80em;">Share your own recipe by <span ng-click="menu.setMainPage('register.html', {closeMenu: true})" style="color: #0080FF;">signing up</span> </span>
+            
+            </ons-col>
+         </ons-row>
+
+
+    </div><!-- Search Form -->
+    </ons-page>
+
+    </ons-navigator>

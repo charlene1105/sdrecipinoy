@@ -1,25 +1,25 @@
 <ons-page>
       <ons-toolbar>
          <div class="left">
-                <ons-toolbar-button 
-                  ng-click="menu.toggleMenu()">
-                  <ons-icon icon="ion-navicon" class="menu-icon"></ons-icon>
+                <ons-back-button></ons-back-button>
+                <ons-toolbar-button>
+                
                 </ons-toolbar-button>
                 <span class="toolbar-title">Search</span>
                 
           </div> <!-- Nav Icon -->
       </ons-toolbar>
-      <ons-list-header style="background-color: #00A629;color: white;">Search Results</ons-list-header>
-      <div ng-show="isLoading" class="center" style="font-size: 2em;">
-      <ons-icon icon="ion-loading-c"></ons-icon> Loading
-      </div>
+      <ons-list-header style="background-color: #06AA85;color: white;">Search Results</ons-list-header>
+      
       <ons-list ng-show="isResults">
-        <ons-list-item modifier="chevron" class="list-item-container" ng-click="nav.pushPage('recipes.html')" ng-repeat="recipe in recipes">
+       <div ng-repeat="recipe in recipes">
+          <ons-list-item modifier="chevron" class="list-item-container" ng-click="getRecipeInfo(recipe.rcpno);">
           <ons-row>
               <ons-col width="95px">
                 <img src="{{ recipe.img }}" class="thumbnail">
               </ons-col>
               <ons-col>
+              {{ recipe.rcpno }}
                 <div class="name">
                   {{ recipe.rcpname }}
                 </div>
@@ -32,11 +32,14 @@
                   {{ recipe.rcpdesc }}
                 </div>
               </ons-col>
-            <ons-col width="40px">
-           
-            </ons-col>
+          </ons-row>
+          <ons-row>
+          <div ng-show="isLoading" class="center" style="font-size: 2em;">
+            <ons-icon icon="ion-loading-c"></ons-icon> Loading
+          </div>
           </ons-row>
         </ons-list-item>
+       </div>
       </ons-list>
       
       <div ng-hide="isResults" fixed-style>

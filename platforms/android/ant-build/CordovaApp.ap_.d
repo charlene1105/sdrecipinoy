@@ -36,6 +36,7 @@ C:\xampp\htdocs\recipinoy\platforms\android\assets\www\dbconfig.php \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\font \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\img \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\index.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\ingredients.php \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\js \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\json \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\lib \
@@ -49,6 +50,8 @@ C:\xampp\htdocs\recipinoy\platforms\android\assets\www\mysettings.html \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\profile.html \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\profile.php \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\provinces.json \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\recipes.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\recipes.php \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\register.html \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\register.php \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\res \
@@ -164,10 +167,14 @@ C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\account \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\general \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\recipe \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\user \
-C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\account\login.html \
-C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\account\register.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\account\myprofile.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\account\myrecipes.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\account\mysettings.html \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\general\about.html \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\general\categories.html \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\general\menu.html \
 C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\general\results.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\recipe\information.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\recipe\ingredients.html \
+C:\xampp\htdocs\recipinoy\platforms\android\assets\www\templates\recipe\procedures.html \
 C:\xampp\htdocs\recipinoy\platforms\android\ant-build\AndroidManifest.xml \

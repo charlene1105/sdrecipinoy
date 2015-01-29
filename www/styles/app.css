@@ -179,8 +179,8 @@ textarea {
   margin: 50px 0px -10px 0px;
 }
 .frmHeading {
-  font-weight: 100;
-  color: #D7B02D;
+  font-weight: 400;
+  color: #12A9A9;
 }
 
 .frmLbl {
@@ -269,7 +269,8 @@ input[type=email], input[type=password] {
   background-color: #FFFFFF;
   border-radius: 8px;
  
-  border-color: #FFFFFF;
+  border-color: #B9F7D1;
+  border-width: 1px;
   color: #272822;
   margin-top: 0px;
   display: block;
@@ -283,7 +284,10 @@ input[type=email], input[type=password] {
 border: 1px solid var-input-invalid-border-color;
 border: none;
 background-color: transparent;
-border-bottom: 1px solid #ddd;
+border-bottom: 1px solid #C5C5C5;
+}
+.text-input--underbar {
+border-bottom: 1px solid #C5C5C5;
 }
 
 

@@ -1,6 +1,8 @@
 
+
+<ons-page>
 <ons-tabbar>
-        <ons-tab page="myhome.html" active="true">
+        <ons-tab page="PAGE.html">
           <ons-icon icon="ion-home"></ons-icon>
           <span style="font-size: 14px">Home</span>
         </ons-tab>
@@ -14,8 +16,6 @@
         </ons-tab>
 </ons-tabbar>
 
-<ons-template id="myrecipes.html">
-<ons-page>
       <ons-toolbar>
          <div class="left">
                 <ons-toolbar-button 
@@ -26,6 +26,8 @@
                 
           </div> <!-- Nav Icon -->
       </ons-toolbar>
+  
+
       <ons-list-header style="background-color: #00A629;color: white;">Search Results</ons-list-header>
       <ons-list>
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="nav.pushPage('page.html')" ng-repeat="recipe in recipes">
@@ -58,4 +60,3 @@
       </div> -->
 </ons-page>
 
-</ons-template>
