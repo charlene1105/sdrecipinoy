@@ -16,7 +16,7 @@ Charles Michael Jose - Research
 
 
 ###Technologies
-===
+==
 ##Front End
 ==
 ###Onsen UI - Front End Mobile App UI
