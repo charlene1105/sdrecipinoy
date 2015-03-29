@@ -15,8 +15,8 @@ Maricar Artuz - Research
 Charles Michael Jose - Research
 
 
-Technologies
-Front End
+###Technologies
+####Front End
 Onsen UI - Front End Mobile App UI
 
 HTML
@@ -27,7 +27,7 @@ AngularJS
 
 ngCordova - Android Native API
 
-Backend
+####Backend
 
 PHP (PDO)
 
