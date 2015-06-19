@@ -1,0 +1,35 @@
+<div ng-controller="verifyCtrlr">
+      <ons-page modifier="full_bg">
+      <ons-toolbar>
+              <div class="left">
+                <ons-toolbar-button 
+                  ng-click="menu.toggleMenu()">
+                  <ons-icon icon="ion-navicon" class="menu-icon"></ons-icon>
+                </ons-toolbar-button>
+                <span class="toolbar-title">Account Verification</span>
+              </div> <!-- Nav Icon -->
+      </ons-toolbar>
+    <div class="search-form" style="background-color: #fff;margin-top: 30px;margin-bottom: 10px;padding-bottom: 5px">
+
+        <img src="img/logo.png" alt="" style="margin-top: 10px">
+        
+        <p class="text-center">Registration Successful</p>
+        <p class="text-center">Your account details:
+        <span class="block bold">username: {{ username }} </span>
+        <span class="block bold">password: {{ password }} </span>
+        </p>
+
+        <br>
+        <p class="text-center">Thank you for joining Recipinoy!</p>
+        <p class="text-center">You can now view your profile by clicking the button below.</p>
+       
+        <button class="button large"  style="margin-bottom: 10px" ng-click="goToHomePage()">
+          <i class="ion-loading-c" ng-show="isLoading"></i>
+            Proceed to your Homepage
+        </button>
+          
+      
+       
+    </div><!-- Search Form -->
+    </ons-page>
+</div>

@@ -1,0 +1,44 @@
+<div ng-controller="userCtrlr">
+<ons-navigator var="nav">
+  <ons-page>
+  <ons-toolbar>
+         <div class="left">
+          <ons-toolbar-button ng-click="menu.toggleMenu()">
+            <ons-icon icon="fa-bars" style="color: white">
+          </ons-toolbar-button>
+                
+                <ons-toolbar-button>
+                    <span class="toolbar-title">{{ toolbartitle }}</span>
+                </ons-toolbar-button>
+          </div> <!-- Nav Icon -->  
+        
+          <!--  <div class="right" ng-show="toolbartitle == 'My Recipes'">
+             
+              <ons-icon icon="ion-android-add" ng-click="menu.setMainPage('templates/account/addrecipes.html')"></ons-icon>
+             
+           </div> -->
+           
+      
+      </ons-toolbar>
+    <ons-tabbar>
+          <ons-tab ng-click="getWhatsNew()" page="templates/account/whatsnew.html" active="true">
+            <ons-icon icon="ion-fork"></ons-icon>
+            <ons-icon icon="ion-spoon"></ons-icon>
+            <!-- <span style="font-size: 14px">What's New</span> -->
+          </ons-tab>
+          <ons-tab ng-click="getWhatsHot();" page="templates/account/whatshot.html">
+            <ons-icon icon="ion-star"></ons-icon>
+            <!-- <span style="font-size: 14px">What's Hot</span>  -->
+          </ons-tab>
+          <ons-tab ng-click="getRegionsBest();" page="templates/account/regionsbest.html">
+            <ons-icon icon="ion-location"></ons-icon>
+           <!--  <span style="font-size: 14px">Region's Best</span> -->
+          </ons-tab>
+          <ons-tab ng-click="getMyRecipes();" page="templates/account/myrecipes.html">
+            <ons-icon icon="ion-person"></ons-icon>
+       <!--      <span style="font-size: 14px">My Recipes</span> -->
+          </ons-tab>
+    </ons-tabbar>
+  </ons-page>
+  </ons-navigator>
+</div>

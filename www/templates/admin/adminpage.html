@@ -1,0 +1,36 @@
+<div ng-controller="adminCtrlr">
+<ons-navigator var="nav">
+  <ons-page>
+  <ons-toolbar>
+         <div class="left">
+          <ons-toolbar-button ng-click="menu.toggleMenu()">
+            <ons-icon icon="fa-bars" style="color: white">
+          </ons-toolbar-button>
+                
+                <ons-toolbar-button>
+                    <span class="toolbar-title">Admin Page</span>
+                </ons-toolbar-button>
+          </div> <!-- Nav Icon -->  
+        
+           <div class="right" ng-show="toolbartitle == 'My Recipes'">
+              <ons-toolbar-button>
+              <ons-icon icon="ion-android-add" style="vertical-align: -4px; font-size: 20px;" ng-click="menu.setMainPage('templates/account/addrecipes.html')"></ons-icon>
+              </ons-toolbar-button>
+           </div>
+           
+      
+      </ons-toolbar>
+    <ons-tabbar position="top">
+          <ons-tab ng-click="" page="templates/admin/ingredientslist.html" active="true">
+            <ons-icon icon="ion-fork"></ons-icon>
+            <ons-icon icon="ion-spoon"></ons-icon>
+            <span style="font-size: 14px">Ingredients List</span>
+          </ons-tab>
+          <ons-tab ng-click="" page="templates/account/whatshot.html">
+            <ons-icon icon="ion-star"></ons-icon>
+            <span style="font-size: 14px">Ingredients Request</span> 
+          </ons-tab>
+    </ons-tabbar>
+  </ons-page>
+  </ons-navigator>
+</div>

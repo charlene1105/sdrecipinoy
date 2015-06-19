@@ -1,0 +1,88 @@
+<ons-navigator var="nav">
+
+      <ons-page modifier="full_bg">
+  
+        <div class="search-form">
+          <ons-toolbar class="navigation-bar">
+            <div class="left">
+              <ons-toolbar-button 
+                ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" class="menu-icon"></ons-icon>
+              </ons-toolbar-button>
+              <span class="toolbar-title">Search for Recipes</span>
+            </div> <!-- Nav Icon -->
+          </ons-toolbar>
+
+        <img src="img/logo.png" alt="">
+        <!-- <img src="http://recipinoy-sdgnosis.rhcloud.com/icon.png" alt=""> -->
+
+
+         <!-- RECIPE INPUT BOX -->
+        <ons-row class="search-box">
+            <ons-col size="10%">
+              <ons-icon icon="ion-spoon" size="30px" fixed-width="false" style="color: red"></ons-icon>
+              <ons-icon icon="ion-fork" size="30px" fixed-width="false" style="color: red"></ons-icon>
+            </ons-col>
+            <ons-col size="90%">
+              <input type="text" class="text-input" placeholder="Recipe Name, Ingredients" ng-model="name" ng-change="checkIfNoRecipeName(name)">
+            </ons-col>
+         </ons-row>
+        
+
+      <!-- PLACE/CATEGORY INPUT BOX -->
+        <ons-row class="search-box">
+            <ons-col size="10%">
+                <ons-icon icon="ion-location" size="30px" fixed-width="false" style="color: red; margin-top: 5px"></ons-icon>
+              </ons-col>
+            <ons-col size="40%">
+                    <select class="text-input" ng-model="region" ng-options="region.name for region in regions track by region.name">
+                    </select>
+            </ons-col>
+
+            <ons-col size="10%">
+                <ons-icon icon="fa-tasks" size="20px" fixed-width="false" style="color: red; margin-top: 5px"></ons-icon>
+              </ons-col>
+            <ons-col size="40%">
+                    <select class="text-input" ng-model="category" ng-options="category.name for category in categories track by category.name">
+                    </select>
+            </ons-col>
+         </ons-row>
+
+
+
+
+        <!-- SEARCH BUTTON -->
+         <ons-row>
+            <ons-col size="10%">
+            </ons-col>
+            <ons-col size="90%">
+           
+
+             <!--  <button class="button large" ng-click="search(name,location.name,category.name)" id="searchBtn">
+              
+              </button>
+ -->
+
+              <button class="button large" ng-click="search(name,region.name,category.name)" id="searchBtn" ng-disabled="norecipename">
+                <ons-icon icon="ion-android-search" ng-hide="isLoading"></ons-icon>
+                <i class="ion-loading-c" ng-show="isLoading"></i>
+                Search Recipe
+              </button>
+
+
+           
+
+              <span style="font-size: 0.80em;" ng-show="notConnected"> <span style="color: red;">Not connected to the internet</span> </span>
+            
+
+        
+        
+            
+            </ons-col>
+         </ons-row>
+
+
+    </div><!-- Search Form -->
+    </ons-page>
+
+    </ons-navigator>

@@ -1,0 +1,120 @@
+<div ng-controller="userCtrlr" ng-init="qty = 0;calories = 0">
+<ons-page>
+ <ons-toolbar>
+        <div class="left">
+	    	<ons-toolbar-button ng-click="menu.toggleMenu()">
+	      		<ons-icon icon="fa-bars" style="color: white">
+	    	</ons-toolbar-button>
+	    	<span class="toolbar-title">Edit Recipe</span>
+	  </div>
+</ons-toolbar>
+
+
+<form name="frmAddRecipes" ng-submit="postRecipe(frmAddRecipes.$valid,rpname,desc,category.name,region.name,procedures);" novalidate>
+<div class="search-form" style="margin-top: -20px">
+
+	<ons-row class="search-box">
+		<label for="">Recipe Name</label>
+		<input type="text" name="rpname" class="text-input" placeholder="Recipe Name" ng-model="rpname" required>
+		<p class="frmError" ng-show="frmAddRecipes.rpname.$invalid && submitted && !valid">Recipe Name is required</p>
+	</ons-row>
+	
+	<ons-row class="search-box">
+		<label for="">Category</label>
+		<select class="text-input" ng-model="category" ng-options="category.name for category in categories track by category.name">
+	    </select>
+	</ons-row>
+
+	<ons-row class="search-box">
+		<label for="">Region</label>
+		 <select class="text-input" ng-model="region" ng-options="region.name for region in regions track by region.name"></select>
+	</ons-row>
+
+	<ons-row class="search-box">
+		<label for="">Description</label>
+		<textarea name="" id="" cols="30" rows="10" ng-model="desc" class="text-area"></textarea>
+	</ons-row>	
+	
+	<ons-row>
+		 <br>
+		 <span style="margin-bottom: 10px;">Ingredients</span>
+	</ons-row>
+
+	<ons-row class="search-box">
+
+			<ons-col size="20%">
+			<span>Type</span>
+                    <select name="" id="" class="text-input">
+                    	<option value="Solid">Solid</option>
+                    	<option value="Liquid">Liquid</option>
+                    </select>   
+            </ons-col>
+            <ons-col size="20%">
+            <span>Qty</span>
+                    <input type="text" class="text-input" ng-model="qty" placeholder="Qty" ng-change="getIngrdntCalories(ingrdntname);">    
+            </ons-col>
+
+            <ons-col size="20%">
+            <span>Unit</span>
+                    <input type="text" name="ingrdntunit" class="text-input" ng-model="ingrdntunit" placeholder="Unit">
+            </ons-col>
+
+            <ons-col size="20%">
+            <span>Name</span>
+                    <input type="text" name="ingrdntname" class="text-input" ng-model="ingrdntname" placeholder="name" ng-change="getIngrdntCalories(ingrdntname);">
+                    <div style="background-color: #E0E0E0;border-color: #030303;border-width:5px">
+                    	<span ng-repeat="result in ingresult" ng-show="frmAddRecipes.ingrdntname.$dirty && !noCalorie && !clicked" ng-click="putToIngredientInput(result.ingname);getIngrdntCalories(ingrdntname);"
+                    style="display: block;line-height: 25px;padding-bottom:10px;text-align: left;">
+                    		{{ result.ingname }}
+                    	</span>
+                    </div> 
+            </ons-col>
+            <ons-col size="20%">  
+            <span>Calories</span>  
+            	<p ng-show="frmAddRecipes.ingrdntname.$dirty && !noCalorie && ingrdntname.length > 1 && !isFraction && getCalories">{{ totalcal }}</p>
+            	<p ng-show="frmAddRecipes.ingrdntname.$dirty && !noCalorie && ingrdntname.length > 1 && isFraction && getCalories">{{ totalcalfraction }}</p>
+            </ons-col>
+  
+            <p class="frmError" ng-show="noCalorie && !getCalories">Calorie info not available</p>
+     </ons-row>
+
+     <ons-row class="search-box">
+     <p class="frmError" ng-show="submitted && ingredients.length < 1">Please include ingredients to your recipe</p>
+     </ons-row>
+	
+	<ons-row class="search-box">
+		<ons-button modifier="large" ng-click="addToIngredients(qty,ingrdntunit,ingrdntname,totalcal,totalcalfraction)">Add to Ingredients</ons-button>
+	</ons-row>
+	<ons-row>
+	<div style="background-color: #BFC1B7;width: 100%">
+		<ul>
+			<li ng-repeat="ingredient in ingredients" style="text-align: justify">
+				{{ ingredient.qty + " " + ingredient.unit + " " + ingredient.name + " " + ingredient.cal }} <ons-button ng-click="removeToIngredients(ingredient)">X</ons-button>
+			</li>
+		</ul>
+	</div>
+	</ons-row>
+
+
+	<ons-row>
+	<br>
+	<label for="">Procedures</label>
+		<textarea id="" cols="30" rows="5" ng-model="procedures" class="text-area"></textarea>
+		<p class="frmError" ng-show="submitted && procedures.length < 1">Please include procedures to your recipe</p>
+	</ons-row>
+
+
+	
+	
+
+	<ons-row class="search-box">
+	<br><br>
+		<button class="button large">Post Recipe</button>
+		
+	</ons-row>
+
+</div>
+</form>
+
+</ons-page>
+</div>

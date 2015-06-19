@@ -1,0 +1,45 @@
+<div ng-controller="loginCtrlr">
+
+<ons-page style="background-color: #272727;"> 
+<ons-list style="background-color: #272727;">
+    <ons-list-header style="background-color: #06AA85;color: white;">Recipes</ons-list-header>
+      
+     <span onclick="menu.setMainPage('templates/account/bottomtabbar.html', {closeMenu: true})" class="menu-item"> 
+        <ons-icon icon="ion-spoon"></ons-icon>
+        <ons-icon icon="ion-fork"></ons-icon>
+        Recipe Feed
+      </span>
+      <span onclick="menu.setMainPage('templates/general/search.html', {closeMenu: true})" class="menu-item"> 
+        <ons-icon icon="ion-android-search"></ons-icon>
+        Search Recipe
+      </span>
+
+      
+        
+    <ons-list-header style="background-color: #06AA85;color: white;">User Account</ons-list-header>
+
+      <span ng-controller="profileCtrlr" ng-click="goToMyProfile()" class="menu-item">
+        <ons-icon icon="fa-user"></ons-icon>
+        My Profile
+      </span>
+
+  
+
+      <span ng-click="logout()" class="menu-item">
+        <ons-icon icon="ion-log-out"></ons-icon>
+        Logout
+      </span>
+
+    <ons-list-header style="background-color: #06AA85;color: white;">Recipinoy</ons-list-header>
+
+      <span onclick="menu.setMainPage('templates/general/about.html', {closeMenu: true})" class="menu-item">
+        <ons-icon icon="fa-info"></ons-icon>
+        About
+      </span>
+
+   
+</ons-list>
+</ons-page>  
+
+  
+</div>

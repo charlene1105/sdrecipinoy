@@ -1,0 +1,150 @@
+<div ng-controller="userCtrlr" ng-init="qty = 0;calories = 0">
+<ons-page modifier="full_bg">
+ <ons-toolbar>
+        <div class="left">
+	    	<ons-toolbar-button ng-click="menu.toggleMenu()">
+	      		<ons-icon icon="fa-bars" style="color: white">
+	    	</ons-toolbar-button>
+	    	<span class="toolbar-title">Add New Recipes</span>
+
+	  </div>
+</ons-toolbar>
+
+<div class="search-form" style="margin-top: 10px">
+	<img ng-src="{{urlForImage(image)}}" class="profile-image"/>
+    <br>
+   	<button ng-click="addImage()" class="button"><ons-icon icon="ion-android-camera"></ons-icon>  Upload Recipe Photo</button>
+    <hr>
+</div>
+<form name="frmAddRecipes" ng-submit="postRecipe(frmAddRecipes.$valid,rpname,desc,category.name,region.name,procedures,image);" novalidate>
+<div class="search-form" style="margin-top: 0px">
+    	
+    
+    	<br>
+
+		<label for="">Recipe Name</label>
+		<input type="text" name="rpname" class="text-input" placeholder="Recipe Name" ng-model="rpname" required>
+		<p class="frmError" ng-show="frmAddRecipes.rpname.$invalid && submitted && !valid">Recipe Name is required</p>
+	
+	
+	
+		<label for="">Category</label> 	
+		<select class="text-input" ng-model="category" ng-options="category.name for category in categories track by category.name">
+	    </select>
+	
+
+	
+		<label for="">Region</label>
+		 <select class="text-input" ng-model="region" ng-options="region.name for region in regions track by region.name"></select>
+	
+
+	
+		<label for="">Description</label>
+		<textarea name="desc" id="" cols="30" rows="10" ng-model="desc" name="desc" class="textarea" required></textarea>
+		<p class="frmError" ng-show="frmAddRecipes.desc.$invalid && submitted && !valid">Recipe description is required</p>
+	
+	
+		 <br>
+		
+
+			<!-- <ons-col size="20%">
+			<span>Type</span>
+                    <select name="" id="" class="text-input">
+                    	<option value="Solid">Solid</option>
+                    	<option value="Liquid">Liquid</option>
+                    </select>   
+            </ons-col> -->
+<ons-row>
+            <ons-col size="15%">
+            <span>Qty</span>
+                    <input type="text" class="text-input" ng-model="qty" placeholder="Qty" ng-change="computeCalories(ingrdntname)">    
+            </ons-col>
+
+            <ons-col size="20%">
+            <span>Unit</span>
+                    <input type="text" name="ingrdntunit" class="text-input" ng-model="ingrdntunit" placeholder="Unit">
+            </ons-col>
+
+            <ons-col size="40%">
+            <span>Name</span>
+                    <input type="text" name="ingrdntname" class="text-input" ng-model="ingrdntname" placeholder="name" ng-change="getIngrdntCalories(ingrdntname);">
+                    <div style="background-color: #E0E0E0;border-color: #030303;border-width:5px">
+                    	<i class="ion-loading-c" ng-show="loading"></i>
+                    	<span ng-repeat="result in ingresult" ng-show="frmAddRecipes.ingrdntname.$dirty && !noCalorie && !clicked && !loading" ng-click="putToIngredientInput(result.ingname);computeCalories(ingrdntname);"
+                  			style="display: block;line-height: 25px;padding-bottom:10px;text-align: left;">
+                    		{{ result.ingname }}
+                    	</span>
+                    </div> 
+            </ons-col>
+            <ons-col size="25%">  
+            <span>Calories</span>  
+            	<p ng-show="frmAddRecipes.ingrdntname.$dirty && !noCalorie && ingrdntname.length > 1 && !isFraction && getCalories">{{ totalcal }}</p>
+            	<p ng-show="frmAddRecipes.ingrdntname.$dirty && !noCalorie && ingrdntname.length > 1 && isFraction && getCalories">{{ totalcalfraction }}</p>
+            	<p class="frmError" ng-show="noCalorie && !getCalories">No Info</p>
+            </ons-col>
+  
+          
+
+     
+</ons-row>
+     
+     <p class="frmError" ng-show="submitted && ingredients.length < 1">Please include ingredients to your recipe</p>
+     
+	
+		<ons-button modifier="large" ng-click="addToIngredients(qty,ingrdntunit,ingrdntname,totalcal,totalcalfraction)"><ons-icon icon="ion-android-cart"></ons-icon>Add to Ingredients</ons-button>
+	
+	<!-- 
+	<div style="background-color: white;margin: 10px 20px 10px 20px">
+		<ul>
+			<li ng-repeat="ingredient in ingredients" style="text-align: justify">
+				{{ ingredient.qty + " " + ingredient.unit + " " + ingredient.name + " " + ingredient.cal }} <ons-button ng-click="removeToIngredients(ingredient)">X</ons-button>
+			</li>
+		</ul>
+	</div>
+	 -->
+<!-- wrapper -->
+<div style="background-color: white;margin-top: 5px">
+<h3 style="display: inline;margin-left: 20px;">Ingredients</h3>
+	<div ng-repeat="ingredient in ingredients" style="margin: 10px 20px 10px 20px">
+		<b>{{ ingredient.qty + " "  + ingredient.unit + " " + ingredient.name + " " }}	</b> = {{ ingredient.cal }} cal
+			
+		<ons-icon icon="ion-android-trash" ng-click="removeToIngredients(ingredient)" style="font-size: 15px;display: inline;float: right;margin-top: 3px;"></ons-icon>
+		<hr>
+	
+
+	</div><!-- ingredient -->
+</div><!-- wrapper -->
+
+
+	
+	<br>
+	<label for="">Procedures</label>
+		<textarea id="" cols="30" rows="10" ng-model="procedures" class="textarea" required name="procedures"></textarea>
+		<p class="frmError" ng-show="frmAddRecipes.procedures.$invalid && submitted">Please include procedures to your recipe</p>
+	
+
+
+	
+	
+
+	
+	<br><br>
+		<button class="button large"><i class="ion-android-list"></i>Post Recipe</button>
+		
+	
+
+</div>
+</form>
+
+<ons-modal var="offlineModal">
+         You are currently not connected to the internet
+     </ons-modal>
+    
+<ons-modal var="postingRecipeModal">
+    <i class="ion-loading-c"></i>
+    Posting Recipe
+ </ons-modal>
+
+
+</ons-page>
+</div>

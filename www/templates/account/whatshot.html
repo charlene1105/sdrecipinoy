@@ -1,0 +1,63 @@
+<div ng-controller="userCtrlr">
+<ons-navigator var="nav">
+ <ons-page modifier="full_bg">
+     <ons-scroller style="height: 100%; width: 100%">
+      <ons-list ng-show="isResults">
+       <div ng-repeat="recipe in whatshot">
+          <ons-list-item modifier="chevron" class="list-item-container" ng-click="viewRecipe(recipe.rpno)">
+          <ons-row class="regions-best">
+                  {{ recipe.rpcategory }}
+          </ons-row>
+          <ons-row>
+              <ons-col width="95px">
+                <img ng-src="{{ recipe.rpimg }}" class="thumbnail-my-recipes">
+              </ons-col>
+              <ons-col>
+                <div class="myrecipes-name">
+                  {{ recipe.rpname }}
+                  
+                </div>
+                <div class="location" ng-init="(arrRating = []).length = (recipe.averating | number: 0);(noRating = []).length = 5 - arrRating.length">
+                  <span ng-repeat="i in arrRating track by $index" ng-show="arrRating.length > 0">
+                    <ons-icon icon="star" style="color: #ECB83E"></ons-icon>
+                  </span> 
+                  <span ng-repeat="i in noRating track by $index" ng-show="arrRating.length > 0">
+                    <ons-icon icon="star" style="color: #939393"></ons-icon>
+                  </span>
+                  <span ng-repeat="i in norating" ng-show="arrRating.length == 0">
+                    <ons-icon icon="star" style="color: #939393"></ons-icon>
+                  </span>
+                  {{ recipe.averating }} <br>
+                  <i class="fa fa-map-marker" style="color: red"></i>
+                    {{ recipe.rpregion }} <br>
+                    {{ recipe.rppostdate }}
+                
+                  
+                </div>
+
+                <div class="desc">
+                  {{ recipe.rpdesc }}
+                </div>
+              </ons-col>
+          </ons-row>
+        </ons-list-item>
+       </div>
+      </ons-list>
+     </ons-scroller>
+     <ons-modal var="myModal">
+        <i class="ion-loading-c"></i>
+        Please wait for what's hot feed
+     </ons-modal>
+
+     <ons-modal var="offlineModal">
+         You are currently not connected to the internet
+     </ons-modal>
+    
+    <ons-modal var="recipeInfoModal">
+        <i class="ion-loading-c"></i>
+        Recipe Info Loading
+     </ons-modal>
+    
+</ons-page> 
+</ons-navigator>
+</div>
